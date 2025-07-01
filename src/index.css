@@ -263,3 +263,6 @@ All colors MUST be HSL.
     }
   }
 }
+body {
+  font-family: 'Inter', 'Space Grotesk', sans-serif;
+}
