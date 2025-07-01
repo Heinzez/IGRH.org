@@ -142,6 +142,22 @@ All colors MUST be HSL.
   .animate-slide-up {
     animation: slide-up 0.6s ease-out;
   }
+
+  .animate-snake-glow {
+    animation: snake-glow 3s ease-in-out infinite;
+  }
+
+  .animate-slide-in-logo {
+    animation: slide-in-logo 0.5s ease-out;
+  }
+
+  .animate-slide-out-text {
+    animation: slide-out-text 0.5s ease-out 0.3s both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
   
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
@@ -154,6 +170,65 @@ All colors MUST be HSL.
     }
     50% { 
       box-shadow: 0 0 40px hsl(var(--primary-glow) / 0.6);
+    }
+  }
+
+  @keyframes snake-glow {
+    0% { 
+      box-shadow: 
+        2px 0 15px hsl(var(--primary-glow) / 0.8),
+        0 0 15px hsl(var(--primary-glow) / 0.4);
+    }
+    25% { 
+      box-shadow: 
+        0 2px 15px hsl(var(--primary-glow) / 0.8),
+        0 0 15px hsl(var(--primary-glow) / 0.4);
+    }
+    50% { 
+      box-shadow: 
+        -2px 0 15px hsl(var(--primary-glow) / 0.8),
+        0 0 15px hsl(var(--primary-glow) / 0.4);
+    }
+    75% { 
+      box-shadow: 
+        0 -2px 15px hsl(var(--primary-glow) / 0.8),
+        0 0 15px hsl(var(--primary-glow) / 0.4);
+    }
+    100% { 
+      box-shadow: 
+        2px 0 15px hsl(var(--primary-glow) / 0.8),
+        0 0 15px hsl(var(--primary-glow) / 0.4);
+    }
+  }
+
+  @keyframes slide-in-logo {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-out-text {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
   }
   

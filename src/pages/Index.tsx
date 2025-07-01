@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Globe, Users, Award, Menu, ArrowRight, Sparkles } from "lucide-react";
+import { Heart, Globe, Users, Award, Menu, ArrowRight, Handshake } from "lucide-react";
 import { useState, useEffect } from "react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import heroImage from "@/assets/hero-women-health.jpg";
 import researchIcon from "@/assets/research-icon.jpg";
 import educationIcon from "@/assets/education-icon.jpg";
@@ -45,9 +46,7 @@ const CountingNumber = ({ target, suffix = "", duration = 2000, shouldGlow = fal
   return (
     <div 
       id={`count-${target}`}
-      className={`text-5xl font-bold text-primary mb-2 transition-all duration-300 ${
-        shouldGlow ? 'animate-pulse-glow' : ''
-      }`}
+      className="text-5xl font-bold text-primary mb-2 transition-all duration-300"
     >
       {count}{suffix}
     </div>
@@ -77,12 +76,13 @@ const Index = () => {
             <a href="/news" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">News</a>
           </nav>
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             <Button 
-              className="hidden md:block bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:from-primary-glow hover:to-primary border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="hidden md:block bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:from-primary-glow hover:to-primary border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
               size="sm"
             >
-              <Sparkles className="w-4 h-4 mr-2" />
-              Donate Now
+              <Handshake className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+              Donate
             </Button>
             <Button 
               variant="ghost" 
@@ -104,9 +104,9 @@ const Index = () => {
               <a href="/research" className="block text-foreground hover:text-primary transition-colors">Research</a>
               <a href="/resources" className="block text-foreground hover:text-primary transition-colors">Resources</a>
               <a href="/news" className="block text-foreground hover:text-primary transition-colors">News</a>
-              <Button className="w-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground border-0 shadow-lg">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Donate Now
+              <Button className="w-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground border-0 shadow-lg group">
+                <Handshake className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+                Donate
               </Button>
             </div>
           </div>
@@ -165,7 +165,9 @@ const Index = () => {
               <div className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">Research Projects</div>
             </div>
             <div className="text-center group hover:scale-110 transition-all duration-500 ease-out">
-              <CountingNumber target={25} suffix="" shouldGlow={true} />
+              <div className="animate-snake-glow rounded-lg p-2">
+                <CountingNumber target={25} suffix="" />
+              </div>
               <div className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">Years of Excellence</div>
             </div>
           </div>
@@ -242,7 +244,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-90"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="animate-float">
-            <Sparkles className="h-12 w-12 mx-auto mb-4 animate-pulse-glow" />
+            <Handshake className="h-12 w-12 mx-auto mb-4 animate-pulse-glow" />
           </div>
           <h2 className="text-4xl font-bold mb-4 animate-slide-up">
             Join Us in Making a Difference
