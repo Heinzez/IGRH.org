@@ -4,7 +4,6 @@ import Lottie from "lottie-react";
 import globeAnimation from "@/assets/globe.json"; // adjust saved in a different path
 
 
-export default function NotFound() {
 const NotFound = () => {
   const location = useLocation();
 
