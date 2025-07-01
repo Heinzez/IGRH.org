@@ -15,12 +15,12 @@ module.exports = {
     },
     extend: {
       colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         luminous: "#39FF14",
-        border: "hsl(240, 5%, 84%)", // ✅ Add default border color used by ShadCN
-        input: "hsl(240, 5%, 96%)",
-        ring: "hsl(240, 5%, 65%)",
-        background: "hsl(0, 0%, 100%)",
-        foreground: "hsl(240, 10%, 4%)",
         primary: "#39FF14",
         secondary: "#0A0A0A",
         accent: "#00D1FF",
