@@ -1,11 +1,58 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Globe, Users, Award, Menu, ArrowRight, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import heroImage from "@/assets/hero-women-health.jpg";
 import researchIcon from "@/assets/research-icon.jpg";
 import educationIcon from "@/assets/education-icon.jpg";
 import policyIcon from "@/assets/policy-icon.jpg";
+
+const CountingNumber = ({ target, suffix = "", duration = 2000, shouldGlow = false }) => {
+  const [count, setCount] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
+
+  useEffect(() => {
+    let startTime = null;
+    const animate = (currentTime) => {
+      if (startTime === null) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+      const currentCount = Math.floor(easeOutQuart * target);
+      
+      setCount(currentCount);
+      
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
+        setIsComplete(true);
+      }
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        requestAnimationFrame(animate);
+        observer.disconnect();
+      }
+    });
+    
+    const element = document.getElementById(`count-${target}`);
+    if (element) observer.observe(element);
+    
+    return () => observer.disconnect();
+  }, [target, duration]);
+
+  return (
+    <div 
+      id={`count-${target}`}
+      className={`text-5xl font-bold text-primary mb-2 transition-all duration-300 ${
+        isComplete ? 'animate-bounce scale-110' : ''
+      } ${shouldGlow ? 'animate-pulse-glow' : ''}`}
+    >
+      {count}{suffix}
+    </div>
+  );
+};
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,9 +61,12 @@ const Index = () => {
       {/* Header */}
       <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 glow-effect">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2 animate-slide-up">
-            <Heart className="h-8 w-8 text-primary animate-pulse-glow" />
-            <span className="text-xl font-bold text-foreground">IGRH</span>
+          <div className="flex items-center space-x-3 animate-slide-up">
+            <img 
+              src="/lovable-uploads/f094b49d-b220-420a-8fd2-8d75185b2f8a.png" 
+              alt="IGRH Logo" 
+              className="h-12 w-auto"
+            />
           </div>
           <nav className="hidden md:flex items-center space-x-6">
             <a href="#" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">About Us</a>
@@ -27,11 +77,11 @@ const Index = () => {
           </nav>
           <div className="flex items-center space-x-4">
             <Button 
-              className="hidden md:block gradient-bg text-primary-foreground hover:shadow-lg glow-effect border-0"
+              className="hidden md:block bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:from-primary-glow hover:to-primary border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               size="sm"
             >
               <Sparkles className="w-4 h-4 mr-2" />
-              Donate
+              Donate Now
             </Button>
             <Button 
               variant="ghost" 
@@ -53,9 +103,9 @@ const Index = () => {
               <a href="#" className="block text-foreground hover:text-primary transition-colors">Research</a>
               <a href="#" className="block text-foreground hover:text-primary transition-colors">Resources</a>
               <a href="#" className="block text-foreground hover:text-primary transition-colors">News</a>
-              <Button className="w-full gradient-bg text-primary-foreground">
+              <Button className="w-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground border-0 shadow-lg">
                 <Sparkles className="w-4 h-4 mr-2" />
-                Donate
+                Donate Now
               </Button>
             </div>
           </div>
@@ -101,21 +151,21 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold text-primary mb-2 animate-pulse-glow">50+</div>
-              <div className="text-muted-foreground group-hover:text-foreground transition-colors">Countries Served</div>
+            <div className="text-center group hover:scale-110 transition-all duration-500 ease-out">
+              <CountingNumber target={50} suffix="+" />
+              <div className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">Countries Served</div>
             </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold text-primary mb-2 animate-pulse-glow">2M+</div>
-              <div className="text-muted-foreground group-hover:text-foreground transition-colors">Lives Impacted</div>
+            <div className="text-center group hover:scale-110 transition-all duration-500 ease-out">
+              <CountingNumber target={2} suffix="M+" />
+              <div className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">Lives Impacted</div>
             </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold text-primary mb-2 animate-pulse-glow">100+</div>
-              <div className="text-muted-foreground group-hover:text-foreground transition-colors">Research Projects</div>
+            <div className="text-center group hover:scale-110 transition-all duration-500 ease-out">
+              <CountingNumber target={100} suffix="+" />
+              <div className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">Research Projects</div>
             </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="text-5xl font-bold text-primary mb-2 animate-pulse-glow">25</div>
-              <div className="text-muted-foreground group-hover:text-foreground transition-colors">Years of Excellence</div>
+            <div className="text-center group hover:scale-110 transition-all duration-500 ease-out">
+              <CountingNumber target={25} suffix="" shouldGlow={true} />
+              <div className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">Years of Excellence</div>
             </div>
           </div>
         </div>
