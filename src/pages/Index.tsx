@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Heart, Globe, Users, Award, Menu, ArrowRight, Handshake } from "lucide-react";
 import { useState, useEffect } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { BurgerMenu, DesktopBurgerMenu } from "@/components/BurgerMenu";
 import heroImage from "@/assets/hero-women-health.jpg";
 import researchIcon from "@/assets/research-icon.jpg";
 import educationIcon from "@/assets/education-icon.jpg";
@@ -60,14 +61,14 @@ const Index = () => {
       {/* Header */}
       <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 glow-effect">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3 animate-slide-up">
+          <a href="/" className="flex items-center space-x-3 animate-slide-up hover:scale-105 transition-transform duration-300">
             <img 
               src="/lovable-uploads/c4a16660-f9be-4e7f-8d59-dfa08469d58d.png" 
               alt="IGRH Logo" 
               className="h-12 w-auto"
             />
             <span className="text-2xl font-bold text-foreground">IGRH</span>
-          </div>
+          </a>
           <nav className="hidden md:flex items-center space-x-6">
             <a href="/about" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">About Us</a>
             <a href="/work" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">Our Work</a>
@@ -76,22 +77,22 @@ const Index = () => {
             <a href="/news" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">News</a>
           </nav>
           <div className="flex items-center space-x-4">
-            <ThemeToggle />
+            <div className="hidden md:block">
+              <ThemeToggle />
+            </div>
             <Button 
-              className="hidden md:block bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:from-primary-glow hover:to-primary border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              className="hidden md:block bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:from-primary-glow hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
               size="sm"
             >
-              <Handshake className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+              <Handshake className="w-5 h-4 mr-2 group-hover:animate-pulse" />
               Donate
             </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              <Menu className="h-6 w-6" />
-            </Button>
+            <div className="hidden md:block">
+              <DesktopBurgerMenu />
+            </div>
+            <div className="md:hidden">
+              <BurgerMenu />
+            </div>
           </div>
         </div>
         
@@ -104,8 +105,8 @@ const Index = () => {
               <a href="/research" className="block text-foreground hover:text-primary transition-colors">Research</a>
               <a href="/resources" className="block text-foreground hover:text-primary transition-colors">Resources</a>
               <a href="/news" className="block text-foreground hover:text-primary transition-colors">News</a>
-              <Button className="w-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground border-0 shadow-lg group">
-                <Handshake className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+              <Button className="w-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground shadow-lg group">
+                <Handshake className="w-5 h-4 mr-2 group-hover:animate-pulse" />
                 Donate
               </Button>
             </div>
@@ -165,7 +166,7 @@ const Index = () => {
               <div className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">Research Projects</div>
             </div>
             <div className="text-center group hover:scale-110 transition-all duration-500 ease-out">
-              <div className="animate-snake-glow rounded-lg p-2">
+              <div className="animate-snake-glow rounded-lg p-3">
                 <CountingNumber target={25} suffix="" />
               </div>
               <div className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">Years of Excellence</div>
@@ -255,7 +256,7 @@ const Index = () => {
           <Button 
             size="lg" 
             variant="secondary" 
-            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 glow-effect group border-0"
+            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 glow-effect group"
           >
             <Heart className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
             Get Involved Today
@@ -270,7 +271,11 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Heart className="h-6 w-6 text-primary" />
+                <img 
+                  src="/lovable-uploads/c4a16660-f9be-4e7f-8d59-dfa08469d58d.png" 
+                  alt="IGRH Logo" 
+                  className="h-6 w-auto"
+                />
                 <span className="font-bold text-foreground">IGRH</span>
               </div>
               <p className="text-muted-foreground text-sm">

@@ -144,7 +144,7 @@ All colors MUST be HSL.
   }
 
   .animate-snake-glow {
-    animation: snake-glow 3s ease-in-out infinite;
+    animation: snake-glow 3s linear infinite;
   }
 
   .animate-slide-in-logo {
@@ -176,28 +176,48 @@ All colors MUST be HSL.
   @keyframes snake-glow {
     0% { 
       box-shadow: 
-        2px 0 15px hsl(var(--primary-glow) / 0.8),
-        0 0 15px hsl(var(--primary-glow) / 0.4);
+        8px 0 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
+    }
+    12.5% { 
+      box-shadow: 
+        6px 6px 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
     }
     25% { 
       box-shadow: 
-        0 2px 15px hsl(var(--primary-glow) / 0.8),
-        0 0 15px hsl(var(--primary-glow) / 0.4);
+        0 8px 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
+    }
+    37.5% { 
+      box-shadow: 
+        -6px 6px 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
     }
     50% { 
       box-shadow: 
-        -2px 0 15px hsl(var(--primary-glow) / 0.8),
-        0 0 15px hsl(var(--primary-glow) / 0.4);
+        -8px 0 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
+    }
+    62.5% { 
+      box-shadow: 
+        -6px -6px 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
     }
     75% { 
       box-shadow: 
-        0 -2px 15px hsl(var(--primary-glow) / 0.8),
-        0 0 15px hsl(var(--primary-glow) / 0.4);
+        0 -8px 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
+    }
+    87.5% { 
+      box-shadow: 
+        6px -6px 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
     }
     100% { 
       box-shadow: 
-        2px 0 15px hsl(var(--primary-glow) / 0.8),
-        0 0 15px hsl(var(--primary-glow) / 0.4);
+        8px 0 20px hsl(var(--primary-glow) / 0.8),
+        0 0 20px hsl(var(--primary-glow) / 0.4);
     }
   }
 
