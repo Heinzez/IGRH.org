@@ -46,8 +46,8 @@ const CountingNumber = ({ target, suffix = "", duration = 2000, shouldGlow = fal
     <div 
       id={`count-${target}`}
       className={`text-5xl font-bold text-primary mb-2 transition-all duration-300 ${
-        isComplete ? 'animate-bounce scale-110' : ''
-      } ${shouldGlow ? 'animate-pulse-glow' : ''}`}
+        shouldGlow ? 'animate-pulse-glow' : ''
+      }`}
     >
       {count}{suffix}
     </div>
@@ -63,17 +63,18 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-3 animate-slide-up">
             <img 
-              src="/lovable-uploads/f094b49d-b220-420a-8fd2-8d75185b2f8a.png" 
+              src="/lovable-uploads/c4a16660-f9be-4e7f-8d59-dfa08469d58d.png" 
               alt="IGRH Logo" 
               className="h-12 w-auto"
             />
+            <span className="text-2xl font-bold text-foreground">IGRH</span>
           </div>
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">About Us</a>
-            <a href="#" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">Our Work</a>
-            <a href="#" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">Research</a>
-            <a href="#" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">Resources</a>
-            <a href="#" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">News</a>
+            <a href="/about" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">About Us</a>
+            <a href="/work" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">Our Work</a>
+            <a href="/research" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">Research</a>
+            <a href="/resources" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">Resources</a>
+            <a href="/news" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">News</a>
           </nav>
           <div className="flex items-center space-x-4">
             <Button 
@@ -98,11 +99,11 @@ const Index = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-card border-t border-border animate-slide-up">
             <div className="container mx-auto px-4 py-4 space-y-4">
-              <a href="#" className="block text-foreground hover:text-primary transition-colors">About Us</a>
-              <a href="#" className="block text-foreground hover:text-primary transition-colors">Our Work</a>
-              <a href="#" className="block text-foreground hover:text-primary transition-colors">Research</a>
-              <a href="#" className="block text-foreground hover:text-primary transition-colors">Resources</a>
-              <a href="#" className="block text-foreground hover:text-primary transition-colors">News</a>
+              <a href="/about" className="block text-foreground hover:text-primary transition-colors">About Us</a>
+              <a href="/work" className="block text-foreground hover:text-primary transition-colors">Our Work</a>
+              <a href="/research" className="block text-foreground hover:text-primary transition-colors">Research</a>
+              <a href="/resources" className="block text-foreground hover:text-primary transition-colors">Resources</a>
+              <a href="/news" className="block text-foreground hover:text-primary transition-colors">News</a>
               <Button className="w-full bg-gradient-to-r from-primary to-primary-glow text-primary-foreground border-0 shadow-lg">
                 <Sparkles className="w-4 h-4 mr-2" />
                 Donate Now
@@ -277,9 +278,9 @@ const Index = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-3">About</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">Mission</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Team</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">History</a></li>
+                <li><a href="/mission" className="hover:text-primary transition-colors">Mission</a></li>
+                <li><a href="/team" className="hover:text-primary transition-colors">Team</a></li>
+                <li><a href="/history" className="hover:text-primary transition-colors">History</a></li>
               </ul>
             </div>
             <div>
