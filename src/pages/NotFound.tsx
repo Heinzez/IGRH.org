@@ -1,6 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import Lottie from "lottie-react";
+import globeAnimation from "@/assets/globe.json"; // adjust saved in a different path
 
+
+export default function NotFound() {
 const NotFound = () => {
   const location = useLocation();
 
@@ -12,14 +16,10 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white px-4 text-center">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white text-center px-4">
        {/* Animated Globe */}
-      <div className="w-32 h-32 mb-6 animate-spin-slow">
-        <img
-          src="/globe.gif" // 👈 Place this in /public and rename accordingly
-          alt="Rotating Globe"
-          className="w-full h-full object-contain"
-        />
+      <div className="w-52 h-52 mb-6">
+        <Lottie animationData={globeAnimation} loop={true} />
         </div>
         <h1 className="text-5xl font-bold mb-4">404</h1>
         <p className="text-xl text-gray-300 mb-6">Oops! Looks like you're off the map 🌍</p>
