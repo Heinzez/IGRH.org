@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Lottie from "lottie-react";
-import globeAnimation from "@/assets/globe.json"; // adjust saved in a different path
+import globeAnimation from "@/assets/globe.json";
 
 export default function NotFound() {
   const location = useLocation();
@@ -44,6 +44,4 @@ export default function NotFound() {
       </p>
       </div>
   );
-};
-
-export default NotFound;
+}
