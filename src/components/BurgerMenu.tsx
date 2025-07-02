@@ -75,10 +75,6 @@ export function BurgerMenu() {
               <Headphones className="h-5 w-5 text-muted-foreground" />
               <span className="text-foreground">Support</span>
             </div>
-            <div className="flex items-center space-x-3">
-              <span className="text-foreground">Theme</span>
-              <ThemeToggle />
-            </div>
           </div>
         </div>
       </SheetContent>

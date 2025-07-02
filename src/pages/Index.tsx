@@ -61,7 +61,7 @@ const Index = () => {
       {/* Header */}
       <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 glow-effect">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center space-x-3 animate-slide-up hover:scale-105 transition-transform duration-300">
+          <a href="/" className="flex items-center space-x-3 animate-slide-up hover:scale-105 transition-transform duration-300 cursor-pointer">
             <img 
               src="/lovable-uploads/c4a16660-f9be-4e7f-8d59-dfa08469d58d.png" 
               alt="IGRH Logo" 
@@ -81,10 +81,10 @@ const Index = () => {
               <ThemeToggle />
             </div>
             <Button 
-              className="hidden md:block bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:from-primary-glow hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              className="hidden md:block bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:from-primary-glow hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group px-6"
               size="sm"
             >
-              <Handshake className="w-5 h-4 mr-2 group-hover:animate-pulse" />
+              <Handshake className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
               Donate
             </Button>
             <div className="hidden md:block">
@@ -258,7 +258,7 @@ const Index = () => {
             variant="secondary" 
             className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 glow-effect group"
           >
-            <Heart className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+            <Handshake className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
             Get Involved Today
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
