@@ -58,7 +58,7 @@ All colors MUST be HSL.
     --sidebar-accent: 207 30% 95%;
     --sidebar-accent-foreground: 207 76% 20%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 142 76% 50%;
+    --sidebar-ring: 207 100% 50%;
   }
 
   .dark {
