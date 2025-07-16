@@ -77,11 +77,8 @@ const Index = () => {
             <a href="/news" className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105">News</a>
           </nav>
           <div className="flex items-center space-x-4">
-            <div className="hidden md:block">
-              <ThemeToggle />
-            </div>
             <Button 
-              className="hidden md:block glass-button text-primary hover:text-primary-glow px-6"
+              className="hidden md:block glass-button text-primary hover:text-primary-glow font-semibold px-6"
               size="sm"
             >
               <Handshake className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
