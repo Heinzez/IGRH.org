@@ -131,14 +131,14 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="glass-button text-primary hover:text-primary-glow group border-0"
+              className="glass-button text-primary hover:text-primary-glow font-semibold group border-0"
             >
               Learn About Our Impact
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button 
               size="lg" 
-              className="glass-button text-primary hover:text-primary-glow"
+              className="glass-button text-primary hover:text-primary-glow font-semibold"
             >
               <Heart className="mr-2 h-4 w-4" />
               Support Our Mission
