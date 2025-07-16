@@ -81,7 +81,7 @@ const Index = () => {
               <ThemeToggle />
             </div>
             <Button 
-              className="hidden md:block bg-gradient-to-r from-primary to-primary-glow text-primary-foreground hover:from-primary-glow hover:to-primary shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group px-6"
+              className="hidden md:block glass-button text-primary hover:text-primary-glow px-6"
               size="sm"
             >
               <Handshake className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform" />
